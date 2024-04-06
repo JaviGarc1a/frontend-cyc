@@ -4,8 +4,7 @@ export async function fetchFamilies() {
 	const BASEURL = process.env.NEXT_PUBLIC_BASE_URL
 	try {
 		const beneficiaries = await axios.get(`${BASEURL}/cyc/family`)
-		console.log(beneficiaries.data)
-		return beneficiaries.data
+		return beneficiaries.data.elements
 	} catch (err) {
 		return null
 	}
